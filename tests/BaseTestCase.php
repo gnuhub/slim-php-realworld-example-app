@@ -215,7 +215,7 @@ abstract class BaseTestCase extends TestCase
         $settings = require __DIR__ . '/../src/settings.php';
 
         // Instantiate the application
-        $this->app = $app = new App($settings);
+        $app= new App($settings);
 
         // Set up dependencies
         require ROOT . 'src/dependencies.php';
@@ -227,5 +227,7 @@ abstract class BaseTestCase extends TestCase
 
         // Register routes
         require ROOT . 'src/routes.php';
+
+        $this->app = $app;
     }
 }
